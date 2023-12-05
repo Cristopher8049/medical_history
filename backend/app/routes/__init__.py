@@ -1,5 +1,7 @@
-# app/routes/__init__.py
-from .home_routes import main_bp
+
+from .get_patient import get_bp
+from .post_patient import post_bp
 
 def init_app(app):
-    app.register_blueprint(main_bp)
+    app.register_blueprint(get_bp)
+    app.register_blueprint(post_bp)

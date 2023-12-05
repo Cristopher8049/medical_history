@@ -9,3 +9,5 @@ instance/
 
 
 frontend/
+
+.DS_Store
