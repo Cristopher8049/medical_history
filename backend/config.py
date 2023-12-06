@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    DEBUG = False
+    DEBUG = True
     TESTING = False
     SECRET_KEY = os.environ.get('SECRET_KEY', 'tu_clave_secreta_predeterminada')
 
@@ -25,8 +25,3 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
 
-app_config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig,
-    'default': DevelopmentConfig,
-}
