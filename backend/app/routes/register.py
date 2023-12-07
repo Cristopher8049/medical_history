@@ -22,15 +22,15 @@ def insert_data():
 
     datos_personales_data = data['datos_personales']
     datos_personales = DatosPersonales(
-        nombres=datos_personales_data['nombres'],
-        apellidos=datos_personales_data['apellidos'],
-        fecha_nacimiento=datos_personales_data['fecha_nacimiento'],
-        ci=datos_personales_data['ci'],
-        genero=datos_personales_data['genero'],
-        telefono=datos_personales_data['telefono'],
-        email=datos_personales_data['email'],
-        tipo_sanguineo=datos_personales_data['tipo_sanguineo'],
-        direccion=direccion 
+        nombres = datos_personales_data['nombres'],
+        apellidos = datos_personales_data['apellidos'],
+        fecha_nacimiento = datos_personales_data['fecha_nacimiento'],
+        ci = datos_personales_data['ci'],
+        genero = datos_personales_data['genero'],
+        telefono = datos_personales_data['telefono'],
+        email = datos_personales_data['email'],
+        tipo_sanguineo = datos_personales_data['tipo_sanguineo'],
+        direccion = direccion 
     )
     datos_personales.insert()
 
