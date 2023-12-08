@@ -1,4 +1,3 @@
-# En el modelo Direccion
 from extensions import db
 
 class Direccion(db.Model):
@@ -10,7 +9,9 @@ class Direccion(db.Model):
     PROVINCIA = db.Column(db.String(100))
     PAIS = db.Column(db.String(100))
 
+
     datos_personales = db.relationship('DatosPersonales', back_populates='direccion', uselist=False)
+    clinica = db.relationship("Clinica", back_populates="direccion")
 
     def __init__(self, direccion, ciudad, provincia, pais):
         self.DIRECCION = direccion

@@ -1,5 +1,4 @@
 from extensions import db
-from .datos_personales import DatosPersonales
 
 class Medico(db.Model):
     __tablename__ = "MEDICO"
@@ -8,7 +7,10 @@ class Medico(db.Model):
     ID_DATOS_PERSONALES = db.Column(db.Integer, db.ForeignKey("DATOS_PERSONALES.ID"))
     ESPECIALIDAD = db.Column(db.String(100))
     MARICULA = db.Column(db.String(100))
+    
+    
     datos_personales = db.relationship("DatosPersonales", back_populates="medico")
+    detalle_historias = db.relationship("DetalleHistorias", back_populates="medico")
 
     def __init__(self, datos_personales, especialidad, maricula):
         self.datos_personales = datos_personales
