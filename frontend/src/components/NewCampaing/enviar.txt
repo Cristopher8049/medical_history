@@ -1,0 +1,67 @@
+
+import './NewCampaingPage.css'
+import React, { useState } from 'react';
+import axios from 'axios';
+import Dropzone from 'react-dropzone';
+
+function NewCampaingPage() {
+  const [file, setFile] = useState(null);
+
+  const handleDrop = (acceptedFiles) => {
+    setFile(acceptedFiles[0]);
+  };
+
+  const handleSubmite = async (e) => {
+    e.preventDefault();
+
+    if (!file) {
+      alert('Por favor, selecciona un archivo CSV.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      await axios.post('http://localhost:3001/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      alert('¡Archivo subido exitosamente!');
+      setFile(null);
+    } catch (error) {
+      console.error('Error al subir el archivo:', error);
+    }
+  };
+
+  return (
+    <div className="dashboard-container">
+      <div className="fondo">
+        <h1> Nueva Campaña</h1>
+        {/* Resto de tu código JSX */}
+        <form onSubmit={handleSubmite}>
+          <Dropzone onDrop={handleDrop}>
+            {({ getRootProps, getInputProps }) => (
+              <div {...getRootProps()} className="dropzone">
+                <input {...getInputProps()} />
+                {file ? (
+                  <p className="file-selected">Archivo seleccionado: {file.name}</p>
+                ) : (
+                  <p className="file-placeholder">
+                    Arrastra y suelta un archivo CSV aquí o haz clic para seleccionar uno.
+                  </p>
+                )}
+              </div>
+            )}
+          </Dropzone>
+          <button type="submit" className="submit-button">
+            Subir archivo
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default NewCampaingPage;

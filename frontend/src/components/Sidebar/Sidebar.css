@@ -1,0 +1,142 @@
+
+
+.navbar{
+  background-color: #04447a;
+  padding: 1rem 2rem;
+  color: white;
+}
+.sidebar{
+  width: 14rem;
+  height: calc(100vh );
+  display: flex;
+  flex-direction: column;
+   
+
+  border-radius: 0px 30px 30px 0px;
+  position: fixed;
+
+}
+.sidebar ul{
+  list-style: none;
+  padding: 1rem 2rem;
+  padding-left: 30px;
+}
+.sidebar li{
+  margin-bottom: 10px; /* Color y grosor del borde inferior */
+  padding: 13px 0; 
+}
+.sidebar  a{
+  text-decoration: none;
+  color: #676e7a ;
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.container{
+  width: 100%;
+  text-align: center;
+}
+
+.logo{
+    padding-top: 50px;
+    padding-bottom: 60px;
+    color: #1f2026;
+    font-size: 30px;
+
+    
+}
+.logo-line {
+
+    height: 0.3px;
+    background-color: #ffffff;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -20px;
+  }
+
+.logout-text {
+
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+}
+.logout-text .icon{
+  color: white;
+  font-size: 17px;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+.logout button:hover {
+  background-color: #cc0000;
+}
+
+.logout button:focus {
+  outline: none;
+}
+.logout-text {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.submenu-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.submenu-toggle .icon {
+  color: white;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+
+.sub-menu {
+  margin-left: -20px;
+  
+}
+.sub-menu a{
+  font-size: 15px;
+}
+span{
+  font-size: 17px;
+  align-items: center; 
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container span:first-child {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.logout-text span{
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.prueba{
+  background-color: #055ffc;
+  width: 200px;
+  border-radius: 15px;
+}
+
+.sidebar ul   li.active {
+  background-color: #055ffc;
+  width: 200px;
+  border-radius: 15px;
+  color: white;
+}
+.sidebar ul li.active span {
+  color: white;
+}
